@@ -17,11 +17,14 @@ describe('ShowProfile', () =>{
     
    await fakeAppointmentsRepository.create({
     provider_id: 'user',
+
     date: new Date(2021, 0, 21, 14, 0, 0),
+
   });
 
   await fakeAppointmentsRepository.create({
     provider_id: 'user',
+
     date: new Date(2021, 0, 21, 15, 0, 0),
   });
 
@@ -29,6 +32,8 @@ describe('ShowProfile', () =>{
     return new Date(2021, 0, 21, 11).getTime();
    
   });
+
+
 
   const availability = await listProviderDayAvailability.execute({
     provider_id: 'user',
@@ -44,6 +49,8 @@ describe('ShowProfile', () =>{
     {hour: 14, available: false},
     {hour: 15, available: false},
     {hour: 16, available: true},
+
+
   ]));
  
 });

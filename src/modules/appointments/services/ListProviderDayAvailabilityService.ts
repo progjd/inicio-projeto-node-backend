@@ -1,6 +1,9 @@
 import { inject, injectable } from 'tsyringe';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
+
 import { getHours, isAfter } from 'date-fns';
+
+
 
 
 
@@ -37,6 +40,7 @@ class ListProviderDayAvailabilityService {
       (_, index) => index + hourStart,
       );
 
+
       const currentDate = new Date(Date.now());
 
       const availability = eachHourArray.map(hour =>{
@@ -50,6 +54,10 @@ class ListProviderDayAvailabilityService {
           available: !hasAppointmentInHour && isAfter(compareDate, currentDate),
         }
       });
+
+    
+    
+
     return availability;
   }
 }
