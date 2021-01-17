@@ -32,7 +32,7 @@ describe('SendForgotPasswordEmail', () =>{
     
     await fakeUsersRepository.create({
       name: 'john doe',
-      email: 'johndoe@example.com',
+      email: 'johntre@example.com',
       password: '123456',
     });
   await sendForgotPasswordEmail.execute({
@@ -55,7 +55,7 @@ describe('SendForgotPasswordEmail', () =>{
   
     const user = await fakeUsersRepository.create({
       name: 'john doe',
-      email: 'johndoe@example.com',
+      email: 'johntre@example.com',
       password: '123456',
     });
     

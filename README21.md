@@ -57,3 +57,27 @@ yarn typeorm migration:create -n CreateUserToken
 yarn add nodemailer (gereciador de fake email)
 Ethereal(gerenciador email)
 yarn add handlebars (variaveis email com nome, idade etc...)
+**mongo**
+sudo docker run --name mongodb -p 27017:27017 -d -t mongo(interface mongodbcompass)
+yarn add mongodb
+sudo docker start mongodb
+(caso obs: mongoose suporte tipo orm para mongo)
+yarn add @types/mongodb -D
+yarn add celebrate (validação de dados campos)
+variable environment(yarn add dotenv)(auth e send forgot)
+git rm --cached ormconfig.json
+yarn add class-transformer(exluir um campo no backend)
+mail.zoho(gratuito)
+(aws environment variables)
+yarn add mime (exibir imagem no browser)
+
+**redis cache**
+sudo docker run --name redis -p 6379:6379 -d -t redis:alpine(cache)
+sudo docker start redis
+# Drive ioredis = faz operações dentro do redis
+yarn add ioredis 
+
+**Express rateLimiter**
+yarn add rate-limiter-flexible (contra ataques DDoS)
+yarn add redis 
+yarn add @types/redis

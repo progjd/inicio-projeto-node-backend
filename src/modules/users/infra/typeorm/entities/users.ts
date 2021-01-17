@@ -2,10 +2,12 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  Timestamp,
   UpdateDateColumn,
   CreateDateColumn,
 } from 'typeorm';
+
+import uploaConfig from '@config/upload';
+import { Exclude, Expose } from 'class-transformer';
 
 @Entity('users')
 class users {
@@ -19,6 +21,7 @@ class users {
   email: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @Column()
@@ -29,5 +32,21 @@ class users {
 
  @UpdateDateColumn()
  updated_at: Date
+
+ @Expose({name: 'avatar_url'})
+ getAvatarUrl(): string | null{
+   if(!this.avatar){
+     return null;
+   }
+   switch(uploaConfig.driver){
+     case 'disk':
+      return `${process.env.APP_API_URL}/file/${this.avatar}`;
+      case 's3':
+        return `https://${uploaConfig.config.aws.bucket}.s3.aamazonaws.com/${this.avatar}`;
+        default:
+          return null;
+   }
+   
+ }
 }
 export default users;

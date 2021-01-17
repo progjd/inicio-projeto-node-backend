@@ -50,7 +50,7 @@ describe('UpdateProfile', () =>{
     
     await fakeUsersRepository.create({
       name: 'john doe',
-      email: 'johndoe@example.com',
+      email: 'johntre@example.com',
       password: '123456',
     });
 
