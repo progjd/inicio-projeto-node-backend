@@ -81,3 +81,6 @@ yarn add ioredis
 yarn add rate-limiter-flexible (contra ataques DDoS)
 yarn add redis 
 yarn add @types/redis
+
+**Deploy**
+yarn add @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver -D

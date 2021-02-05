@@ -42,7 +42,7 @@ class users {
      case 'disk':
       return `${process.env.APP_API_URL}/file/${this.avatar}`;
       case 's3':
-        return `https://${uploaConfig.config.aws.bucket}.s3.aamazonaws.com/${this.avatar}`;
+        return `https://${uploaConfig.config.aws.bucket}.s3.amazonaws.com/${this.avatar}`;
         default:
           return null;
    }
